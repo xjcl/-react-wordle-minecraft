@@ -35,7 +35,7 @@ export const Keyboard = ({
     const listener = (e: KeyboardEvent) => {
       if (e.code === 'Enter') {
         onEnter()
-      } else if (e.code === 'Backspace') {
+      } else if (e.code === 'Backspace' || e.code === 'Delete') {
         onDelete()
       } else {
         const key = localeAwareUpperCase(e.key)
