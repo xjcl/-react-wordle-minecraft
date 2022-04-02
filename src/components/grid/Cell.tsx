@@ -11,6 +11,23 @@ type Props = {
   position?: number
 }
 
+const keyToImgUrl : Record<string, string> = {
+    'P': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c1/Oak_Planks.png',
+    'C': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone.png',
+    'S': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png',
+    ' ': '',
+}
+
+export function makeImgUrl(value: string | undefined) {
+    if (value === undefined)
+        return ''
+    if (!(value in keyToImgUrl))
+        return value
+    const url = keyToImgUrl[value]
+    const name = url.slice(0, -4).split('/').pop()
+    return <img src={url} alt={name}/>
+}
+
 export const Cell = ({
   value,
   status,
@@ -22,6 +39,7 @@ export const Cell = ({
   const shouldReveal = isRevealing && isCompleted
   const animationDelay = `${position * REVEAL_TIME_MS}ms`
   const isHighContrast = getStoredIsHighContrastMode()
+  const image = makeImgUrl(value)
 
   const classes = classnames(
     'w-14 h-14 border-solid border-2 flex items-center justify-center mx-0.5 text-4xl font-bold rounded dark:text-white',
@@ -47,7 +65,7 @@ export const Cell = ({
   return (
     <div className={classes} style={{ animationDelay }}>
       <div className="letter-container" style={{ animationDelay }}>
-        {value}
+          {image}
       </div>
     </div>
   )
