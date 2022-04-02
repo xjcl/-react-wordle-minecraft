@@ -1,6 +1,6 @@
 export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
 
-export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
+export const WIN_MESSAGES = ['Great job!', 'Awesome!', 'Well done!', 'Yeet!']
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Need to fill entire 3x3 grid'
 export const WORD_NOT_FOUND_MESSAGE = 'Not a valid recipe'

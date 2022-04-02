@@ -23,6 +23,7 @@ import {
   isWordInWordList,
   isWinningWord,
   solution,
+  solutionName,
   findFirstUnusedReveal,
   unicodeLength,
 } from './lib/words'
@@ -74,7 +75,7 @@ function App() {
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+      showErrorAlert(CORRECT_WORD_MESSAGE(solutionName), {
         persist: true,
       })
     }
@@ -137,13 +138,14 @@ function App() {
   }
 
   useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution })
+    saveGameStateToLocalStorage({ guesses, solution, solutionName })
   }, [guesses])
 
   useEffect(() => {
     if (isGameWon) {
       const winMessage =
-        WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
+        WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)] +
+        ` Crafted a ${solutionName}.`
       const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
 
       showSuccessAlert(winMessage, {
@@ -230,7 +232,7 @@ function App() {
       if (guesses.length === MAX_CHALLENGES - 1) {
         setStats(addStatsForCompletedGame(stats, guesses.length + 1))
         setIsGameLost(true)
-        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+        showErrorAlert(CORRECT_WORD_MESSAGE(solutionName), {
           persist: true,
           delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
         })
