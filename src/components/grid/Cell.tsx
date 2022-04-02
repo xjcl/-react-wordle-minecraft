@@ -13,8 +13,10 @@ type Props = {
 
 const keyToImgUrl : Record<string, string> = {
     'P': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c1/Oak_Planks.png',
-    'C': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone.png',
     'S': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png',
+    'C': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/67/Cobblestone.png',
+    'I': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/fc/Iron_Ingot_JE3_BE2.png',
+    'R': 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e1/Redstone_Dust_JE2_BE2.png',
     ' ': '',
 }
 

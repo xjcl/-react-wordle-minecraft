@@ -2,10 +2,6 @@
  * p = wood planks
  * c = cobblestone
  */
+import { WORDS } from "./wordlist";
 
-export const VALID_GUESSES = [
-  'pppp pppp',  // chest
-  'cccc cccc',  // furnace
-  'pp pp pp ',  // door
-  '   p pppp',  // boat
-]
+export const VALID_GUESSES = WORDS
