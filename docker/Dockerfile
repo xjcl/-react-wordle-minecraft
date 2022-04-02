@@ -5,7 +5,7 @@ RUN npm install
 COPY . .
 
 FROM node_modules AS prod_builder
-RUN npm run build
+RUN CI=false npm run build
 
 ## Production image
 FROM nginx:1.20.2-alpine AS prod
