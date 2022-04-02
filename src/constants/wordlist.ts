@@ -8,11 +8,12 @@ const RECIPES_RAW = [
     new Recipe('pppp pppp', 'Chest'),
     new Recipe('pp pp pp ', 'Door'),
     new Recipe('   p pppp', 'Boat'),
-    new Recipe('   pp pp ', 'Crafting table'),  // TODO: which corner
+    new Recipe('   pp pp ', 'Crafting table'),
     new Recipe('  p ppppp', 'Stairs'),
     new Recipe('pppp pppp', 'Trapdoor'),
     new Recipe('   p p p ', 'Bowl'),
     new Recipe('   pp    ', 'Pressure plate'),
+    new Recipe('    p  p ', 'Stick'),
     new Recipe('    p    ', 'Button'),
 
     // sticks
@@ -20,7 +21,6 @@ const RECIPES_RAW = [
     new Recipe('   spssps', 'Fence gate'),
     new Recipe('s sssss s', 'Ladder'),
     new Recipe('pppppp s ', 'Sign'),
-
 
     // tools stick
     new Recipe(' i  s  s ', 'Shovel'),
@@ -34,21 +34,11 @@ const RECIPES_RAW = [
     new Recipe('    i i  ', 'Shears'),
     new Recipe('pipppp p ', 'Shield'),
 
-
     // armor
     new Recipe('iiii i   ', 'Helmet'),
     new Recipe('i iiiiiii', 'Chestplate'),
     new Recipe('iiii ii i', 'Leggings'),
     new Recipe('   i ii i', 'Boots'),
-
-
-    // redstone
-    new Recipe('rrrrrrrrr', 'Redstone block', false),
-    new Recipe(' i iri i ', 'Compass'),
-    new Recipe('pppprpppp', 'Note block'),
-    new Recipe('    r  s ', 'Redstone torch'),
-    new Recipe('pppciccrc', 'Piston', false),
-
 
     // iron-based
     new Recipe('   i iiii', 'Minecart'),
@@ -57,10 +47,17 @@ const RECIPES_RAW = [
     new Recipe('i ii iiii', 'Cauldron'),
     new Recipe('ii pp pp ', 'Smithing table'),
 
+    // redstone
+    new Recipe('rrrrrrrrr', 'Redstone block', false),
+    new Recipe(' i iri i ', 'Compass'),
+    new Recipe('pppprpppp', 'Note block'),
+    new Recipe('    r  s ', 'Redstone torch'),
+
     // stone-based
     new Recipe('cccc cccc', 'Furnace', false),
     new Recipe('cccc ccrc', 'Dropper', false),
     new Recipe('    s  c ', 'Lever', false),
+    new Recipe('pppciccrc', 'Piston', false),
 ]
 
 export const RECIPES = RECIPES_RAW.filter(r => r.use)
