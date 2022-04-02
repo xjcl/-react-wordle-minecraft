@@ -145,7 +145,7 @@ function App() {
     if (isGameWon) {
       const winMessage =
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)] +
-        ` Crafted a ${solutionName}.`
+        ` Crafted (a) ${solutionName}.`
       const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
 
       showSuccessAlert(winMessage, {
