@@ -1,0 +1,29 @@
+
+DONE
+- 6 x 3x3 layout
+- Display icons instead of letters (top + keyboard)
+
+- Fix "The word was ..." (name recipe)
+- Randomize with each refresh vs daily (2 versions?)
+
+- Normalization of smaller than 3x3 guesses
+- Decide set of icons and recipes
+- Optional: Show what item gets crafted
+
+- NEW HOWTO/INSTRUCTIONS MODAL
+
+
+TODO
+- Optional: User can click and drag
+- Optional: CSS theming around MC
+    (cf Craftle)
+    https://nerawoowty.github.io/craftle.html
+
+
+docker kill $(docker ps -q); docker container prune; docker rmi -f $(docker images -a -q); docker build -t reactle:dev -f docker/Dockerfile .; docker run -p 80:3000 reactle:dev
+
+
+Rules
+- Guess the Minecraft recipe in minimal guesses
+- Armor and tools are normalized to use iron
+- Items smaller than 3x3 are centered, otherwise in the bottom-left (except for helmets, they are on top)

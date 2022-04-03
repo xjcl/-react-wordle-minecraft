@@ -1,4 +1,14 @@
-# React Wordle
+# Minecraftle
+
+Wordle/Reactle fork based on Minecraft recipes.
+
+![](./minecraftle_demo.png)
+
+Detailed rules in-game.
+
+(Original README below)
+
+----
 
 This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
 
