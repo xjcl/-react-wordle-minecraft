@@ -9,7 +9,7 @@ export const RECIPES_RAW = [
     new Recipe('   p pppp', 'Boat', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f4/Oak_Boat_JE4_BE2.png'),
     new Recipe('   pp pp ', 'Crafting table', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b7/Crafting_Table_JE4_BE3.png'),
     new Recipe('  p ppppp', 'Stairs', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a0/Oak_Stairs_%28N%29_JE7_BE6.png'),
-    new Recipe('pppp pppp', 'Trapdoor', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c8/Oak_Trapdoor_%28D%29_JE1_BE1.png'),
+    new Recipe('   pppppp', 'Trapdoor', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c8/Oak_Trapdoor_%28D%29_JE1_BE1.png'),
     new Recipe('   p p p ', 'Bowl', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/82/Bowl_JE2_BE2.png'),
     new Recipe('   pp    ', 'Pressure plate', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d4/Oak_Pressure_Plate_JE5_BE2.png'),
     new Recipe('    p  p ', 'Stick', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Stick_JE1_BE1.png'),
@@ -62,4 +62,3 @@ export const RECIPES_RAW = [
 export const RECIPES = RECIPES_RAW.filter(r => r.use)
 export const WORDS = RECIPES.map(r => r.recipe)
 export const VALID_GUESSES = RECIPES_RAW.map(r => r.recipe)
-
