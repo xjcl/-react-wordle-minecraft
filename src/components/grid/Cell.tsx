@@ -23,8 +23,8 @@ const keyToImgUrl : Record<string, string> = {
 }
 
 function getRecipeURL(value: string) {
-    const ls = RECIPES_RAW.filter(r => r.recipe.toUpperCase() == value)
-    if (ls.length == 0)
+    const ls = RECIPES_RAW.filter(r => r.recipe.toUpperCase() === value)
+    if (ls.length === 0)
         return ''
     return ls[0].imgurl
 }
@@ -39,7 +39,7 @@ export function makeImgUrl(value: string | undefined) {
     if (value === undefined)
         return ''
 
-    const url = (value.length == 9) ? getRecipeURL(value) : getLetterURL(value)
+    const url = (value.length === 9) ? getRecipeURL(value) : getLetterURL(value)
 
     const name = url.slice(0, -4).split('/').pop()
     return <img src={url} alt={name}/>
@@ -57,7 +57,7 @@ export const Cell = ({
   const animationDelay = `${position * REVEAL_TIME_MS}ms`
   const isHighContrast = getStoredIsHighContrastMode()
 
-  const hasValidValue = isFinal ? value?.length == 9 : value?.length == 1
+  const hasValidValue = isFinal ? value?.length === 9 : value?.length === 1
   const isFilled = hasValidValue && !isCompleted
   const image = hasValidValue ? makeImgUrl(value) : ''
 
