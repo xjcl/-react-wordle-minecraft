@@ -48,9 +48,9 @@ export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
       const status = getGuessStatuses(guess)
       const splitGuess = unicodeSplit(guess)
 
-      return splitGuess
-        .map((_, i) => {
-          switch (status[i]) {
+      return [0, 3, 6].map(i => splitGuess.slice(i, i + 3)
+        .map((_, j) => {
+          switch (status[i + j]) {
             case 'correct':
               return tiles[0]
             case 'present':
@@ -59,9 +59,9 @@ export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
               return tiles[2]
           }
         })
-        .join('')
+        .join('')).join('\n')
     })
-    .join('\n')
+    .join('\n\n')
 }
 
 const attemptShare = (shareData: object) => {
