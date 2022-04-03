@@ -37,7 +37,11 @@ export const shareStatus = (
   }
 
   if (!shareSuccess) {
-    navigator.clipboard.writeText(textToShare)
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(textToShare)
+    } else {
+      alert(textToShare)
+    }
     handleShareToClipboard()
   }
 }
