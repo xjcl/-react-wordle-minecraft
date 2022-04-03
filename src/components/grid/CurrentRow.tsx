@@ -14,15 +14,21 @@ export const CurrentRow = ({ guess, className }: Props) => {
   const cells = splitGuess.concat(emptyCells)
 
   return (
-    <div className={classes}>
-      {[0, 3, 6].map(i => (
-          <div className="flex justify-center mb-1">
-            {cells.slice(i, i + 3).map((val: any, j) => (
-                <Cell key={i + j} value={val} />
-            ))}
-          </div>
-      ))}
-
+    <div className="flex justify-center">
+      <div>
+        <div className={classes}>
+          {[0, 3, 6].map(i => (
+              <div className="flex justify-center mb-1">
+                {cells.slice(i, i + 3).map((val: any, j) => (
+                    <Cell key={i + j} value={val} />
+                ))}
+              </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center mb-5 ml-10">
+        <Cell key={99} value={guess} isFinal={true} />
+      </div>
     </div>
   )
 }
