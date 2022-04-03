@@ -5,7 +5,7 @@ class Recipe {
 export const RECIPES_RAW = [
     // basic planks
     new Recipe('pppp pppp', 'Chest', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/72/Chest_%28S%29_JE2.png'),
-    new Recipe('pp pp pp ', 'Door', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0e/Oak_Door_JE8.png'),
+    new Recipe('pp pp pp ', 'Door', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/51/Oak_Door_%28item%29_JE4.png'),
     new Recipe('   p pppp', 'Boat', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f4/Oak_Boat_JE4_BE2.png'),
     new Recipe('   pp pp ', 'Crafting table', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b7/Crafting_Table_JE4_BE3.png'),
     new Recipe('  p ppppp', 'Stairs', 'https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a0/Oak_Stairs_%28N%29_JE7_BE6.png'),
