@@ -29,7 +29,7 @@ import {
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
-  loadGameStateFromLocalStorage,
+  loadStatsFromLocalStorage,
   saveGameStateToLocalStorage,
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
@@ -65,21 +65,7 @@ function App() {
   )
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
-    const loaded = loadGameStateFromLocalStorage()
-    if (loaded?.solution !== solution) {
-      return []
-    }
-    const gameWasWon = loaded.guesses.includes(solution)
-    if (gameWasWon) {
-      setIsGameWon(true)
-    }
-    if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
-      setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solutionName), {
-        persist: true,
-      })
-    }
-    return loaded.guesses
+    return []
   })
 
   const [stats, setStats] = useState(() => loadStats())
@@ -91,9 +77,9 @@ function App() {
   )
 
   useEffect(() => {
-    // if no game state on load,
+    // if never played before,
     // show the user the how-to info modal
-    if (!loadGameStateFromLocalStorage()) {
+    if (!loadStatsFromLocalStorage()) {
       setTimeout(() => {
         setIsInfoModalOpen(true)
       }, WELCOME_INFO_MODAL_MS)
@@ -212,7 +198,7 @@ function App() {
     // chars have been revealed
     setTimeout(() => {
       setIsRevealing(false)
-    }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
+    }, REVEAL_TIME_MS * (MAX_WORD_LENGTH + 1))
 
     const winningWord = isWinningWord(currentGuess)
 

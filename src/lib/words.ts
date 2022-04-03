@@ -74,7 +74,6 @@ export const localeAwareUpperCase = (text: string) => {
 }
 
 export const getWordOfDay = () => {
-  localStorage.clear()
   const index = Math.floor(Math.random() * WORDS.length)
   const nextday = ""
 
